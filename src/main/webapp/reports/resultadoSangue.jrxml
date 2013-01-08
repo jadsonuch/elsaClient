@@ -1,0 +1,1391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" pageWidth="595" pageHeight="900" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" >
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="2349"/>
+	<style name="Title" fontName="Times" fontSize="50" isBold="true" pdfFontName="Sans-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="Table Dataset 1" />
+	<field name="name" class="java.lang.String"/>
+	<field name="imagePath" class="java.lang.String"/>
+	<field name="recruitmentNumber" class="java.lang.Integer"/>
+	<field name="birthdate" class="java.lang.Long"/>
+	<field name="fieldCenter" class="java.lang.String"/>
+	<field name="glicoseResult" class="java.lang.String"/>
+	<field name="glicoseObs" class="java.lang.String"/>
+	<field name="glicose120MinResult" class="java.lang.String"/>
+	<field name="glicose120MinObs" class="java.lang.String"/>
+	<field name="hemoglobinaGlicadaResult" class="java.lang.String"/>
+	<field name="hemoglobinaGlicadaObs" class="java.lang.String"/>
+	<field name="insulinaResult" class="java.lang.String"/>
+	<field name="insulinaObs" class="java.lang.String"/>
+	<field name="insulina120MinResult" class="java.lang.String"/>
+	<field name="insulina120MinObs" class="java.lang.String"/>
+	<field name="colesterolTotalResult" class="java.lang.String"/>
+	<field name="colesterolTotalObs" class="java.lang.String"/>
+	<field name="colesterolHdlResult" class="java.lang.String"/>
+	<field name="colesterolHdlObs" class="java.lang.String"/>
+	<field name="colesterolLdlResult" class="java.lang.String"/>
+	<field name="colesterolLdlObs" class="java.lang.String"/>
+	<field name="trigliceridesResult" class="java.lang.String"/>
+	<field name="trigliceridesObs" class="java.lang.String"/>
+	<field name="alaninaTransaminaseResult" class="java.lang.String"/>
+	<field name="alaninaTransaminaseObs" class="java.lang.String"/>
+	<field name="aspartatoTransaminaseResult" class="java.lang.String"/>
+	<field name="aspartatoTransaminaseObs" class="java.lang.String"/>
+	<field name="gamaGlutamilTransferaseResult" class="java.lang.String"/>
+	<field name="gamaGlutamilTransferaseObs" class="java.lang.String"/>
+	<field name="ureiaResult" class="java.lang.String"/>
+	<field name="ureiaObs" class="java.lang.String"/>
+	<field name="creatininaResult" class="java.lang.String"/>
+	<field name="creatininaObs" class="java.lang.String"/>
+	<field name="firstBspobBeginDate" class="java.lang.Long"/>
+	<field name="firstBsfbBeginDate" class="java.lang.Long"/>
+	<group name="Page 1">
+		<groupExpression><![CDATA[(int)($V{REPORT_COUNT}/5)]]></groupExpression>
+		<groupHeader>
+			<band height="675">
+				<rectangle>
+					<reportElement x="0" y="0" width="554" height="92" backcolor="#FFFFFF"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="10" y="117" width="60" height="20"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[GLICOSE:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="297" y="32" width="38" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[ELSA/]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="0" y="177" width="554" height="15"/>
+				</rectangle>
+				<rectangle>
+					<reportElement mode="Opaque" x="0" y="92" width="554" height="85" backcolor="#FFFFFF"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="0" y="192" width="554" height="107"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="0" y="317" width="554" height="95" backcolor="#FFFFFF"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="0" y="412" width="554" height="80"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="0" y="509" width="554" height="80"/>
+				</rectangle>
+				<elementGroup/>
+				<textField isBlankWhenNull="true">
+					<reportElement x="85" y="33" width="208" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{name})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="4" y="47" width="59" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new Integer($F{recruitmentNumber})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="85" y="46" width="145" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[DATA DE NASCIMENTO:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="297" y="46" width="157" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[DATA DA COLETA JEJUM:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="5" y="33" width="80" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[NÚMERO ELSA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="97" width="143" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[GLICEMIA JEJUM		]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="358" y="92" width="121" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[MATERIAL: PLASMA ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="124" y="117" width="49" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[mg/dL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="331" y="112" width="213" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[VALORES DE REFERÊNCIA: 70 A 99 mg/dL
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="137" width="269" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[METODOLOGIA: ENZIMÁTICA AUTOMATIZADA (HEXOQUINASE)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="157" width="23" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[OBS:]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="72" width="555" height="3"/>
+				</line>
+				<staticText>
+					<reportElement x="4" y="199" width="143" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[GLICEMIA APÓS CARGA	]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="361" y="199" width="125" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[MATERIAL: PLASMA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="219" width="60" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[GLICOSE:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="125" y="219" width="39" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[mg/dL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="311" y="219" width="233" height="60"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[                  VALORES DE REFERÊNCIA
+TOLERÂNCIA NORMAL À GLICOSE: < 140 mg/dL
+INTOLERÂNCIA À GLICOSE: 140 A 199 mg/dL
+DIABETES:>= 200 mg/dL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="279" width="23" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[OBS:]]></text>
+				</staticText>
+				<line>
+					<reportElement x="1" y="396" width="554" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="4" y="317" width="175" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Hemoglobina glicada (HbA1C)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="360" y="317" width="127" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[MATERIAL: SANGUE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="337" width="46" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[HbA1C:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="110" y="338" width="36" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[%]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="335" y="337" width="209" height="21"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[VALORES DE REFERÊNCIA: 4,0 A 6,3%]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="357" width="387" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[METODOLOGIA: CROMATOGRAFIA LÍQUIDA DE ALTA RESOLUÇÃO (HPLC) AUTOMATIZADA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="376" width="23" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[OBS:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="412" width="109" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[INSULINA JEJUM]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="361" y="412" width="109" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[MATERIAL: SORO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="432" width="62" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[INSULINA:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="125" y="431" width="46" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[μIU/mL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="311" y="432" width="233" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[VALORES DE REFERÊNCIA: ATÉ 29,1 uIU/mL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="452" width="347" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[METODOLOGIA: IMUNOENSAIO POR QUIMIOLUMINESCÊNCIA AUTOMATIZADA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="472" width="23" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[OBS:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="509" width="222" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[INSULINA 2 HORAS APÓS CARGA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="360" y="509" width="119" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[MATERIAL: SORO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="297" y="529" width="257" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[VALORES DE REFERÊNCIA NÃO ESTABELECIDOS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="529" width="62" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[INSULINA:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="123" y="529" width="53" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[uIU/mL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="549" width="369" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[METODOLOGIA: IMUNOENSAIO POR QUIMIOLUMINESCÊNCIA AUTOMATIZADA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="569" width="23" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[OBS:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="63" y="117" width="60" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{glicoseResult})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="64" y="219" width="60" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{glicose120MinResult})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="50" y="337" width="60" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{hemoglobinaGlicadaResult})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="66" y="432" width="60" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{insulinaResult})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="66" y="529" width="60" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{insulina120MinResult})]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement x="230" y="46" width="62" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date($F{birthdate})]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement x="454" y="46" width="72" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date($F{firstBsfbBeginDate})]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="299" width="554" height="18"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="0" y="492" width="554" height="17"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="297" y="59" width="190" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[DATA DA COLETA PÓS-CARGA:]]></text>
+				</staticText>
+				<textField evaluationTime="Report" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement x="487" y="59" width="65" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date($F{firstBspobBeginDate})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="4" y="259" width="269" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[METODOLOGIA: ENZIMÁTICA AUTOMATIZADA (HEXOQUINASE) ]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="0" y="589" width="554" height="17"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="0" y="606" width="554" height="17"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="11" y="606" width="436" height="17"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[RESPONSÁVEL TÉCNICO:LIGIA MARIA GIONGO FEDELI CRF:10491]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="117" width="60" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[GLICOSE:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="335" y="32" width="67" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{fieldCenter})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="27" y="157" width="511" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{glicoseObs})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="27" y="279" width="511" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{glicose120MinObs})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="27" y="376" width="511" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{hemoglobinaGlicadaObs})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="27" y="472" width="511" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{insulinaObs})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="27" y="569" width="511" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{insulina120MinObs})]]></textFieldExpression>
+				</textField>
+				<image>
+					<reportElement x="369" y="3" width="184" height="30"/>
+					<imageExpression><![CDATA[$F{imagePath}]]></imageExpression>
+				</image>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Page 2">
+		<groupExpression><![CDATA[$F{name}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band height="664">
+				<rectangle>
+					<reportElement x="1" y="493" width="554" height="81"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="1" y="75" width="554" height="94"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="1" y="2" width="554" height="73"/>
+				</rectangle>
+				<image>
+					<reportElement x="369" y="4" width="184" height="30"/>
+					<imageExpression><![CDATA[$F{imagePath}]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="4" y="129" width="338" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[METODOLOGIA: ENZIMÁTICA AUTOMATIZADA (IFCC MODIFICADA)]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="163" y="96" width="60" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{alaninaTransaminaseResult})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="4" y="76" width="177" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[ALANINA TRANSAMINASE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="96" width="160" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[ALANINA TRANSAMINASE:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="223" y="96" width="49" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[U/L]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="358" y="76" width="121" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[MATERIAL: SORO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="282" y="96" width="272" height="53"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[VALORES DE REFERÊNCIA
+HOMENS: 9 A 43 U/L
+MULHERES: 9 A 36 U/L
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="149" width="23" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[OBS:]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="1" y="169" width="554" height="17"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="1" y="186" width="554" height="90"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="4" y="256" width="23" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[OBS:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="358" y="186" width="121" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[MATERIAL: SORO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="247" y="206" width="49" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[U/L]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="186" width="176" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[ASPARTATO TRANSAMINASE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="289" y="206" width="265" height="50"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[VALORES DE REFERÊNCIA
+HOMENS: 10 A 35 U/L
+MULHERES: 10 A 31 U/L
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="5" y="206" width="182" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[ASPARTATO TRANSAMINASE:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="236" width="338" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[METODOLOGIA: ENZIMÁTICA AUTOMATIZADA (IFCC MODIFICADA)]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="187" y="206" width="60" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{aspartatoTransaminaseResult})]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="1" y="276" width="554" height="14"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="1" y="290" width="554" height="91"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="4" y="361" width="23" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[OBS:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="358" y="290" width="121" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[MATERIAL: SORO]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="69" y="311" width="60" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{gamaGlutamilTransferaseResult})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="4" y="341" width="422" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[METODOLOGIA: CINÉTICA COLORIMÉTRICA AUTOMATIZADA (SZACZ - IFCC)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="290" width="281" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[GAMA GLUTAMIL TRANSFERASE (GAMA GT)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="311" width="64" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[GAMA GT:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="289" y="311" width="265" height="50"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[VALORES DE REFERÊNCIA
+HOMENS: 2 A 30 U/L
+MULHERES: 1 A 24 U/L]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="129" y="311" width="49" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[U/L]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="1" y="381" width="554" height="17"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="1" y="398" width="554" height="80"/>
+				</rectangle>
+				<textField isBlankWhenNull="true">
+					<reportElement x="46" y="418" width="60" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{ureiaResult})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="106" y="418" width="41" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[mg/dL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="358" y="398" width="121" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[MATERIAL: SORO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="418" width="42" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[URÉIA:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="458" width="23" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[OBS:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="282" y="418" width="272" height="15"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[VALORES DE REFERÊNCIA: 10 A 50 mg/dL
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="438" width="406" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[METODOLOGIA: CINÉTICA AUTOMATIZADA (UREASE E GLUMATAMATO DESIDROGENASE)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="398" width="143" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[URÉIA]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="1" y="574" width="554" height="15"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="1" y="589" width="554" height="17"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="10" y="589" width="409" height="17"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[RESPONSÁVEL TÉCNICO:LIGIA MARIA GIONGO FEDELI CRF:10491]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="1" y="478" width="554" height="15"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="5" y="494" width="143" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[CREATININA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="145" y="514" width="49" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[mg/dL]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="84" y="514" width="60" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{creatininaResult})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="5" y="554" width="23" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[OBS:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="358" y="493" width="121" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[MATERIAL: SORO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="514" width="80" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[CREATININA:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="279" y="514" width="275" height="15"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[VALORES DE REFERÊNCIA: 0,4 A 1,3 mg/dL
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="534" width="406" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[METODOLOGIA: ENZIMÁTICA COLORIMÉTRICA AUTOMATIZADA (JAFFÉ SEM DESPROTEINIZAÇÃO)]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="28" y="149" width="510" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{alaninaTransaminaseObs})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="29" y="256" width="511" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{aspartatoTransaminaseObs})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="26" y="361" width="508" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{gamaGlutamilTransferaseObs})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="29" y="458" width="511" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{ureiaObs})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="30" y="554" width="510" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{creatininaObs})]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement x="488" y="61" width="65" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date($F{firstBspobBeginDate})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="84" y="33" width="208" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{name})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="84" y="47" width="145" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[DATA DE NASCIMENTO:]]></text>
+				</staticText>
+				<textField evaluationTime="Report" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement x="455" y="47" width="72" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date($F{firstBsfbBeginDate})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="336" y="33" width="67" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{fieldCenter})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="298" y="47" width="157" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[DATA DA COLETA JEJUM:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="298" y="33" width="38" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[ELSA/]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="5" y="33" width="80" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[NÚMERO ELSA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="298" y="61" width="190" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[DATA DA COLETA PÓS-CARGA:]]></text>
+				</staticText>
+				<textField evaluationTime="Report" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement x="229" y="47" width="62" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date($F{birthdate})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="5" y="47" width="59" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new Integer($F{recruitmentNumber})]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="Page 3">
+		<groupExpression><![CDATA[$F{name}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band height="622">
+				<rectangle>
+					<reportElement x="1" y="563" width="554" height="17"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="1" y="455" width="554" height="93"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="1" y="330" width="554" height="109"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="1" y="205" width="554" height="108"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="1" y="75" width="554" height="115"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="1" y="1" width="553" height="74"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="297" y="101" width="259" height="49"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[VALORES DE REFERÊNCIA
+VALORES DESEJÁVEIS:<200 mg/dL
+LIMÍTROFES:200 A 239 mg/dL
+AUMENTADOS: >= 240 mg/dL
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="361" y="81" width="121" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[MATERIAL: SORO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="158" y="101" width="49" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[mg/dL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="101" width="93" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Colesterol total:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="81" width="143" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[COLESTEROL TOTAL]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="97" y="101" width="60" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{colesterolTotalResult})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="4" y="150" width="369" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[METODOLOGIA: ENZIMÁTICA COLORIMÉTRICA AUTOMATIZADA (COLESTEROL OXIDASE)]]></text>
+				</staticText>
+				<image>
+					<reportElement x="369" y="3" width="184" height="30"/>
+					<imageExpression><![CDATA[$F{imagePath}]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="4" y="586" width="421" height="17"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[RESPONSÁVEL TÉCNICO:LIGIA MARIA GIONGO FEDELI CRF:10491]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="1" y="548" width="554" height="15"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="4" y="458" width="143" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[TRIGLICÉRIDES]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="508" width="422" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[METODOLOGIA: ENZIMÁTICA AUTOMATIZADA (GLICEROL FOSFATO PEROXIDASE SEGUNDO TRINDER)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="296" y="478" width="258" height="30"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[VALORES DE REFERÊNCIA
+VALORES DESEJÁVEIS: <150 mg/dL
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="528" width="23" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[OBS:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="478" width="100" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[TRIGLICÉRIDES:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="360" y="455" width="121" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[MATERIAL: SORO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="164" y="478" width="49" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[mg/dL]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="104" y="478" width="60" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{trigliceridesResult})]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="1" y="439" width="554" height="16"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="156" y="353" width="49" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[mg/dL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="292" y="353" width="258" height="66"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[VALORES DE REFERÊNCIA
+VALORES DESEJÁVEIS
+PESSOAS DE ALTO RISCO: <100 mg/dL
+PESSOAS DE MÉDIO RISCO: <130 mg/dL
+PESSOAS DE BAIXO RISCO: <160 mg/dL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="353" width="93" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[LDL Colesterol:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="333" width="143" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[LDL COLESTEROL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="399" width="338" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[METODOLOGIA: CÁLCULO FRIEDWALD]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="97" y="353" width="60" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{colesterolLdlResult})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="360" y="330" width="121" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[MATERIAL: SORO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="419" width="23" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[OBS:]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="1" y="313" width="554" height="17"/>
+				</rectangle>
+				<textField isBlankWhenNull="true">
+					<reportElement x="96" y="233" width="60" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{colesterolHdlResult})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="4" y="273" width="338" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[METODOLOGIA: ENZIMÁTICA COLORIMÉTRICA HOMOGÊNEA AUTOMATIZADA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="233" width="92" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[HDL Colesterol:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="297" y="228" width="246" height="60"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[VALORES DE REFERÊNCIA
+VALORES DESEJÁVEIS
+DIABÉTICOS: > 45 mg/dL
+NÃO DIABÉTICOS: > 40 mg/dL
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="213" width="143" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[HDL COLESTEROL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="157" y="233" width="49" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[mg/dL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="361" y="208" width="121" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[MATERIAL: SORO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="293" width="23" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[OBS:]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="1" y="190" width="554" height="15"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="4" y="170" width="23" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[OBS:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="27" y="170" width="511" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{colesterolTotalObs})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="27" y="293" width="506" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{colesterolHdlObs})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="27" y="419" width="511" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{colesterolLdlObs})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="27" y="528" width="511" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{trigliceridesObs})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="335" y="33" width="67" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{fieldCenter})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="297" y="61" width="190" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[DATA DA COLETA PÓS-CARGA:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="297" y="33" width="38" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[ELSA/]]></text>
+				</staticText>
+				<textField evaluationTime="Report" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement x="487" y="61" width="65" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date($F{firstBspobBeginDate})]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement x="228" y="47" width="62" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date($F{birthdate})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="4" y="47" width="59" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new Integer($F{recruitmentNumber})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="4" y="33" width="80" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[NÚMERO ELSA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="83" y="47" width="145" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[DATA DE NASCIMENTO:]]></text>
+				</staticText>
+				<textField evaluationTime="Report" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement x="454" y="47" width="72" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date($F{firstBsfbBeginDate})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="297" y="47" width="157" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[DATA DA COLETA JEJUM:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="83" y="33" width="208" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new String($F{name})]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

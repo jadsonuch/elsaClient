@@ -1,0 +1,137 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="commonLayout.xhtml">
+
+	<ui:define name="navigation">
+		<li><a href="about.xhtml">Sobre</a>
+		</li>
+	</ui:define>
+
+	<ui:define name="content">
+
+		<script type="text/javascript">
+		<!--
+			jQuery(document)
+					.ready(
+							function($) {
+								$('#primeTable').removeClass("ui-datatable");
+								$('#primeTable').removeClass("ui-widget");
+								$("#primeTable table")
+										.addClass(
+												"table table-striped table-bordered table-condensed");
+							});
+
+			function abreDialogo() {
+				$('#dialogoExame').modal({
+					"backdrop": "static",
+					"show" : true
+				});
+			}
+		//-->
+		</script>
+		<p:dataTable id="primeTable" value="#{controllerGeral.listaExames}"
+			var="lista">
+			<f:facet name="header">
+				<div class="container-fluid">
+					<div class="nav navbar-form pull-left">
+						<div class="textoBarra">
+							<h:outputText value="Lista de Exames" />
+						</div>
+					</div>
+
+					<div class="navbar-search pull-right">
+						<i class="icon-search icon-red"></i> <input type="text"
+							placeholder="Search" class="search-query" />
+					</div>
+
+				</div>
+			</f:facet>
+			<f:facet name="footer">
+				<div class="container-fluid">
+					<div class="nav navbar-form pull-left">
+						<h:outputText value="Total de Exames " />
+						<h:outputText value="31" />
+					</div>
+				</div>
+			</f:facet>
+			<p:column headerText="Exames">
+				<ul>
+					<li>Exame: #{lista.numero}
+					</li>
+					<!-- <li class="post-by"><i class="icon-user icon-green"></i>
+						Medico: #{lista.nome}
+					</li> -->
+					<li class="post-date"><i class="icon-calendar icon-green"></i>
+						Data: <h:outputText value="#{lista.date}">
+						<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</li>
+				</ul>
+			</p:column>
+			<p:column headerText="Tipo Exame">
+				<span class="label label-important">#{lista.tipo}</span>
+			</p:column>
+			<p:column headerText="Botão">
+				<h:form class="formMarginFix">
+					<p:commandLink styleClass="btn btn-info btn-mini"
+						action="#{controllerGeral.abrir(lista)}"
+						oncomplete="abreDialogo();" update=":panelDialog">
+						<i class="icon-zoom-in icon-blue"></i>
+					</p:commandLink>
+					
+					<h:commandLink styleClass="btn btn-info btn-mini"
+							actionListener="#{controllerGeral.salvarPDF(lista)}" >
+							<i class="icon-arrow-down icon-blue"></i>						
+					</h:commandLink>
+					
+				</h:form>
+			</p:column>
+		</p:dataTable>
+
+		<script>
+			function closeDialog() {
+				$('#dialogoExame').modal('hide');
+			};
+		</script>
+		
+		<h:panelGroup layout="block" id="panelDialog">
+		<div class="modal hide fade" id="dialogoExame">
+			<div class="modal-header">
+				<a href="#" class="close" data-dismiss="modal">X</a>
+				<h3><h:outputText value="Exame -> "/>
+	              <h:outputText value="#{controllerGeral.consultaSelecionada.numero}"/></h3>
+			</div>
+			<div class="modal-body">
+				<div class="divDialogElements">
+					<div class="alert alert-success">
+						<h:panelGrid columns="2">
+							<h:outputText value="Tipo: "/><h:outputText value="#{controllerGeral.consultaSelecionada.tipo}"/>							
+							<h:outputText value="Altura: "/><h:outputText value="#{controllerGeral.consultaSelecionada.altura}"/>
+							<h:outputText value="Peso: "/><h:outputText value="#{controllerGeral.consultaSelecionada.peso}"/>
+							<h:outputText value="Pressao Sistolica: "/><h:outputText value="#{controllerGeral.consultaSelecionada.pressaoSistolica}"/>
+							<h:outputText value="Pressao Diastolica: "/><h:outputText value="#{controllerGeral.consultaSelecionada.pressaoDiastolica}"/>						
+						</h:panelGrid>
+					</div>
+				</div>
+				
+			</div>
+			<div class="modal-footer">
+				<h:form>
+					<h:commandLink styleClass="btn btn-info btn-mini"
+							actionListener="#{controllerGeral.salvarPDF}" >
+							<i class="icon-arrow-down icon-blue"></i>						
+					</h:commandLink>
+					<a href="#" class="btn" onclick="closeDialog();">Cancel</a> <a
+					href="#" class="btn btn-primary" onclick="closeDialog();">OK</a>
+				</h:form>
+
+			</div>
+		</div>
+		</h:panelGroup>
+		
+	</ui:define>
+</ui:composition>
+</html>
