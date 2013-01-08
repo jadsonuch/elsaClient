@@ -23,13 +23,13 @@ public class ControleDeAcesso implements Filter {
 		HttpSession session = req.getSession();
 
 		if (session.getAttribute("usuario") != null
-				|| req.getRequestURI().endsWith("login.xhtml")
+				|| req.getRequestURI().endsWith("login2.xhtml")
 				|| req.getRequestURI().endsWith("about.xhtml")
 				|| req.getRequestURI().contains("/javax.faces.resource/")) {
 			chain.doFilter(request, response);
 		} else {
 			HttpServletResponse res = (HttpServletResponse) response;
-			res.sendRedirect("login.xhtml?faces-redirect=true");
+			res.sendRedirect("login2.xhtml?faces-redirect=true");
 		}
 	}
 
