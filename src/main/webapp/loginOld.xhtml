@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="commonLayout.xhtml">
+
+	<ui:define name="navigation">
+		<li><a href="about.xhtml">Sobre</a></li>
+	</ui:define>
+
+	<ui:define name="content">
+
+		<div class="panel login">
+			<div class="panel-content">
+				<h:form class="">
+					<fieldset>
+						<div class="well">
+    					<div class="loginform">
+    					<i class="icon-user icon-blue"></i>
+							Login
+    					</div>
+						<hr />
+						<div class="control-group">
+							<div class="input-prepend">
+								<span class="add-on"><i class="icon-user icon-blue"></i>
+								</span>
+								<h:inputText placeholder="Usuario" required="true"
+									value="#{autenticadorBean.usuario}" id="username" />
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="input-prepend">
+								<span class="add-on"><i class="icon-random icon-blue"></i>
+								</span>
+								<h:inputSecret placeholder="Senha" required="true"
+									value="#{autenticadorBean.senha}" id="password"></h:inputSecret>
+							</div>
+						</div>
+						<hr />
+						<h:commandLink styleClass="btn btn-primary btn-large"
+							action="#{autenticadorBean.autentica}">
+							<i class="icon-ok icon-white"></i> Entrar
+			            </h:commandLink>
+			            </div>
+					</fieldset>
+				</h:form>
+			</div>
+		</div>
+
+	</ui:define>
+</ui:composition>
+</html>

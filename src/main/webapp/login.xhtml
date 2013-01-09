@@ -1,52 +1,110 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
-<ui:composition template="commonLayout.xhtml">
 
-	<ui:define name="navigation">
-		<li><a href="about.xhtml">Sobre</a></li>
-	</ui:define>
+<h:head>
 
-	<ui:define name="content">
+<style>
+.ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {
+    background: url("#{resource['images/ui-bg_flat_15_cd0a0a_40x100.png']}") repeat-x scroll 50% 50% #CD0A0A;
+    border: 1px solid #CD0A0A;
+    color: #FFFFFF;
+}
 
-		<div class="panel login">
-			<div class="panel-content">
-				<h:form class="">
-					<fieldset>
-						<div class="well">
-    					<div class="loginform">
-    					<i class="icon-user icon-blue"></i>
-							Login
-    					</div>
-						<hr />
-						<div class="control-group">
-							<div class="input-prepend">
-								<span class="add-on"><i class="icon-user icon-blue"></i>
-								</span>
-								<h:inputText placeholder="Usuario" required="true"
-									value="#{autenticadorBean.usuario}" id="username" />
-							</div>
-						</div>
-						<div class="control-group">
-							<div class="input-prepend">
-								<span class="add-on"><i class="icon-random icon-blue"></i>
-								</span>
-								<h:inputSecret placeholder="Senha" required="true"
-									value="#{autenticadorBean.senha}" id="password"></h:inputSecret>
-							</div>
-						</div>
-						<hr />
-						<h:commandLink styleClass="btn btn-primary btn-large"
-							action="#{autenticadorBean.autentica}">
-							<i class="icon-ok icon-white"></i> Entrar
-			            </h:commandLink>
-			            </div>
-					</fieldset>
-				</h:form>
-			</div>
+.ui-widget-shadow { margin: -7px 0 0 -7px; padding: 7px; background: #000000 url("#{resource['images/ui-bg_highlight-hard_70_000000_1x100.png']}") 50% top repeat-x; opacity: .30;filter:Alpha(Opacity=30); -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }
+
+
+body {
+	color: #333333;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 85%;
+}
+
+html,body {
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	margin: 0 auto;
+	width: 1024px;
+}
+
+#header {
+	background-image:
+		url("/elsa/javax.faces.resource/logo_elsa.jpg.xhtml?ln=images");
+	background-repeat: no-repeat;
+	margin: 10px 0 4px;
+}
+
+#header h1 {
+	height: 50px;
+	padding-top: 20px;
+	text-align: right;
+}
+
+#loginForm fieldset {
+	text-align: center;
+}
+
+#loginForm table {
+	margin: 20px auto;
+	text-align: center;
+}
+
+#footer {
+	clear: both;
+	margin: 10px 0;
+	padding-top: 10px;
+	text-align: center;
+	width: 100%;
+}
+</style>
+</h:head>
+<h:body>
+
+	<div id="container">
+
+		<div id="header">
+			<h1>
+				<a href="">elsa Client</a>
+			</h1>
 		</div>
 
-	</ui:define>
-</ui:composition>
+		<div id="content">
+
+			<h:form id="loginForm">
+				<p:fieldset>
+					<h:panelGrid columns="1">
+						<h:outputText
+							value="Por favor, informe seu nome de usuário e senha de acesso:" />
+						<h:panelGrid columns="2" cellpadding="5">
+							<h:outputLabel for="username" value="Username:" />
+							<p:inputText placeholder="Usuario" required="true"
+								value="#{autenticadorBean.usuario}" id="username"
+								label="username" />
+
+							<h:outputLabel for="password" value="Password:" />
+							<p:password placeholder="Senha" required="true"
+								value="#{autenticadorBean.senha}" id="password"></p:password>
+
+							<f:facet name="footer">
+								<p:commandButton id="loginButton" value="Entrar no Sistema"
+									action="#{autenticadorBean.autentica}" />
+							</f:facet>
+						</h:panelGrid>
+					</h:panelGrid>
+				</p:fieldset>
+			</h:form>
+		</div>
+		<div id="footer">
+			<p>
+				Sistema de consultas de exames.<br /> Desenvolvido para TCC da
+				Pós-graduação do Centro Universitário Ritter dos Reis
+			</p>
+		</div>
+	</div>
+</h:body>
 </html>

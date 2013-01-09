@@ -52,7 +52,7 @@ public class AutenticadorBean {
 		HttpSession session = (HttpSession) ec.getSession(false);
 		session.removeAttribute("usuario");
 		session.invalidate();						
-		return "login2?faces-redirect=true";
+		return "login?faces-redirect=true";
 	}
 
 	// GETTERS E SETTERS
