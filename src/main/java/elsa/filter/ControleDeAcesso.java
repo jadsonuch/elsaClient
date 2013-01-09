@@ -24,7 +24,6 @@ public class ControleDeAcesso implements Filter {
 
 		if (session.getAttribute("usuario") != null
 				|| req.getRequestURI().endsWith("login.xhtml")
-				|| req.getRequestURI().endsWith("about.xhtml")
 				|| req.getRequestURI().contains("/javax.faces.resource/")) {
 			chain.doFilter(request, response);
 		} else {

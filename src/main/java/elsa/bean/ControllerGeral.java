@@ -20,14 +20,6 @@ import elsa.remotes.ParticipantBloodExamResult;
 import elsa.remotes.ParticipantHemogramExamResult;
 import elsa.remotes.ParticipantUrineExamResult;
 
-/*
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperExportManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.data.JRBeanArrayDataSource;
-*/
-
 @ManagedBean
 @SessionScoped
 public class ControllerGeral {
@@ -39,8 +31,8 @@ public class ControllerGeral {
 		hemograma.setName("João da Silva");
 		hemograma.setFieldCenter("2012");
 		hemograma.setRecruitmentNumber(12345);
-		hemograma.setBirthdate(12345678L);
-		hemograma.setFirstBsfbBeginDate(12345678L);
+		hemograma.setBirthdate(123456780L);
+		hemograma.setFirstBsfbBeginDate(923456780L);
 		hemograma.setEritrocitos("4.250.000");
 		hemograma.setHemoglobina("14,3");
 		hemograma.setHematocrito("39");
@@ -125,14 +117,8 @@ public class ControllerGeral {
 		this.urina = urina;
 	}
 	
-	
-	
 	/*
-	private List<Consulta> listaExames;
-	
-	private Consulta consultaSelecionada;
-	
-	
+
 	public List<Consulta> getListaExames() {
 		if(listaExames==null){
 			LoginServiceProxy proxy = new LoginServiceProxy();			
@@ -149,73 +135,6 @@ public class ControllerGeral {
 			}			
 		}
 		return listaExames;
-	}
-
-	public void setListaExames(List<Consulta> listaExames) {
-		this.listaExames = listaExames;
-	}
-	
-	public void abrir(Consulta consulta){
-		setConsultaSelecionada(consulta); 		
-		System.out.println("Abrindo Exame numero X -> "+consulta.getNumero());
-		System.out.println("Abrindo Exame Data X -> "+consulta.getData());				
-	}
-	
-	public void salvarPDF(Consulta consulta){
-		setConsultaSelecionada(consulta); 		
-		System.out.println("Abrindo Exame numero X -> "+consulta.getNumero());
-		System.out.println("Abrindo Exame Data X -> "+consulta.getData());		
-		salvarPDF();
-	}
-	
-	public void salvarPDF(){
-		
-		String jasper = "reports/exame.jasper";
-		
-		String reportPath = FacesContext.getCurrentInstance()
-				.getExternalContext().getRealPath(jasper);
-		
-		JRBeanArrayDataSource dataSource = new JRBeanArrayDataSource(new Consulta[]{consultaSelecionada});
-		
-		JasperPrint jasperPrint = null;
-		
-		try {
-			jasperPrint = JasperFillManager.fillReport(reportPath,
-					new HashMap<String, Object>(), dataSource);
-		} catch (JRException e) {
-			e.printStackTrace();
-		}
-			
-		HttpServletResponse httpServletResponse = (HttpServletResponse) FacesContext
-				.getCurrentInstance().getExternalContext().getResponse();
-		
-		String filename = "Exame";
-		httpServletResponse.addHeader("Content-disposition",
-				"attachment; filename=" + filename + ".pdf");
-		
-		ServletOutputStream servletOutputStream;
-		try {
-			servletOutputStream = httpServletResponse
-					.getOutputStream();
-			JasperExportManager.exportReportToPdfStream(jasperPrint,
-					servletOutputStream);
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (JRException e) {
-			e.printStackTrace();
-		}	
-		
-		FacesContext.getCurrentInstance().responseComplete();
-	}		
-
-
-	public Consulta getConsultaSelecionada() {
-		return consultaSelecionada;
-	}
-
-	public void setConsultaSelecionada(Consulta consultaSelecionada) {
-		this.consultaSelecionada = consultaSelecionada;
 	}
 	*/
 }

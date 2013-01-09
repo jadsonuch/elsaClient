@@ -1,0 +1,372 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition>
+
+	<p:dialog id="sangueDialog" header="Exame de Sangue" widgetVar="sangue"
+		modal="true" height="800">
+		<h:outputText value="This is a Modal Dialog." />
+	</p:dialog>
+
+	<p:dialog styleClass="dialogos" id="hemogramaDialog" header="Hemograma"
+		widgetVar="hemograma" modal="true" width="650" height="450"
+		resizable="false" dynamic="true">
+
+		<p:panelGrid style="width:100%;">
+			<p:row>
+				<p:column styleClass="semBorda">
+					<h:outputText value="Número ELSA: " />
+				</p:column>
+				<p:column styleClass="semBorda">
+					<h:outputText value="#{controllerGeral.hemograma.name}" />
+				</p:column>
+				<p:column styleClass="semBorda">
+					<h:outputText value="ELSA/#{controllerGeral.hemograma.fieldCenter}" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column styleClass="semBorda">
+					<h:outputText
+						value="#{controllerGeral.hemograma.recruitmentNumber}" />
+				</p:column>
+				<p:column styleClass="semBorda">
+					<h:outputText
+						value="Data de Nascimento: #{controllerGeral.hemograma.birthdate}" />
+				</p:column>
+				<p:column styleClass="semBorda">
+					<h:outputText
+						value="Data da Coleta: #{controllerGeral.hemograma.firstBsfbBeginDate}" />
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+		<p:panelGrid style="margin:auto; text-align: center; width:100%;">
+			<p:row>
+				<p:column styleClass="semBorda" style="width:50%">
+					<h:outputText value="HEMOGRAMA COMPLETO" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:50%">
+					<h:outputText value="Material: Sangue" />
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+		<p:panelGrid style="margin:auto; text-align: center; width:100%;">
+			<p:row>
+				<p:column colspan="3">
+					<h:outputText value="SÉRIE VERMELHA" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column styleClass="semBorda" style="width:30%">
+					<h:outputText value="RESULTADO" />
+				</p:column>
+				<p:column colspan="2" styleClass="semBorda" style="width:70%">
+					<h:outputText value="VALORES DE REFERÊNCIA" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column styleClass="semBorda" style="width:30%">
+					<h:outputText value="" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="MULHERES" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="HOMENS" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column styleClass="semBorda" style="width:30%">
+					<h:outputText value="ERITRÓCITOS:" />
+					<h:outputText value="#{controllerGeral.hemograma.eritrocitos}" />
+					<h:outputText value="/mm³" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="4.000.000 a 5.200.000/mm³" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="4.500.000 a 5.900.000/mm³" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column styleClass="semBorda" style="width:30%">
+					<h:outputText value="HEMOGLOBINA:" />
+					<h:outputText value="#{controllerGeral.hemograma.hemoglobina}" />
+					<h:outputText value="g%" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="12,0 a 16,0 g%" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="13,5 a 17,5 g%" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column styleClass="semBorda" style="width:30%">
+					<h:outputText value="HEMATÓCRITO" />
+					<h:outputText value="#{controllerGeral.hemograma.hematocrito}" />
+					<h:outputText value="%" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="36 a 46%" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="41 a 53%" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column styleClass="semBorda" style="width:30%">
+					<h:outputText value="VCM:" />
+					<h:outputText value="#{controllerGeral.hemograma.vcm}" />
+					<h:outputText value="fl" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="80 a 100 fl" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="80 a 100 fl" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column styleClass="semBorda" style="width:30%">
+					<h:outputText value="HCM:" />
+					<h:outputText value="#{controllerGeral.hemograma.hcm}" />
+					<h:outputText value="pg" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="26 a 34 pg" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="26 a 34 pg" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column styleClass="semBorda" style="width:30%">
+					<h:outputText value="CHCM:" />
+					<h:outputText value="#{controllerGeral.hemograma.chcm}" />
+					<h:outputText value="g/dL" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="31 a 37 g/dL" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="31 a 37 g/dL" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column styleClass="semBorda" style="width:30%">
+					<h:outputText value="RDW:" />
+					<h:outputText value="#{controllerGeral.hemograma.rdw}" />
+					<h:outputText value="%" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="até 14,9%" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="até 14,9%" />
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+		<p:panelGrid style="margin:auto; text-align: center; width:100%;">
+			<p:row>
+				<p:column colspan="5">
+					<h:outputText value="SÉRIE BRANCA" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column colspan="3" styleClass="semBorda" style="width:30%">
+					<h:outputText value="RESULTADO" />
+				</p:column>
+				<p:column colspan="2" styleClass="semBorda" style="width:70%">
+					<h:outputText value="VALORES DE REFERÊNCIA" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column styleClass="semBorda" style="width:10%">
+					<h:outputText value="" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:10%">
+					<h:outputText value="%" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:10%">
+					<h:outputText value="/mm³" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="%" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="/mm³" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column colspan="2" styleClass="semBorda" style="width:20%">
+					<h:outputText value="LEUCÓCITOS:" />
+				</p:column>
+
+				<p:column styleClass="semBorda" style="width:10%">
+					<h:outputText value="#{controllerGeral.hemograma.leucocitos}" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="4.500 a 11.000" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column colspan="2" styleClass="semBorda" style="width:20%">
+					<h:outputText value="NEUTRÓFILOS:" />
+					<h:outputText value="#{controllerGeral.hemograma.neutrofilos}" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:10%">
+					<h:outputText value="" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="40 a 70" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="1.800 a 7.700" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column colspan="2" styleClass="semBorda" style="width:20%">
+					<h:outputText value="BASTONETES:" />
+					<h:outputText value="#{controllerGeral.hemograma.bastonetes}" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:10%">
+					<h:outputText value="" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="0 a 5" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="0 a 550" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column colspan="2" styleClass="semBorda" style="width:20%">
+					<h:outputText value="SEGMENTADOS:" />
+					<h:outputText value="#{controllerGeral.hemograma.segmentados}" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:10%">
+					<h:outputText value="" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="40 a 65" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="1800 a 7150" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column colspan="2" styleClass="semBorda" style="width:20%">
+					<h:outputText value="EOSINÓFILOS:" />
+					<h:outputText value="#{controllerGeral.hemograma.eosinofilos}" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:10%">
+					<h:outputText value="" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="1 a 5" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="45 a 600" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column colspan="2" styleClass="semBorda" style="width:20%">
+					<h:outputText value="BASÓFILOS:" />
+					<h:outputText value="#{controllerGeral.hemograma.basofilos}" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:10%">
+					<h:outputText value="" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="0 a 2" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="0 a 200" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column colspan="2" styleClass="semBorda" style="width:20%">
+					<h:outputText value="LINFÓCITOS:" />
+					<h:outputText value="#{controllerGeral.hemograma.linfocitos}" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:10%">
+					<h:outputText value="" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="22 a 44" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="1.000 a 4.800" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column colspan="2" styleClass="semBorda" style="width:20%">
+					<h:outputText value="MONÓCITOS:" />
+					<h:outputText value="#{controllerGeral.hemograma.monocitos}" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:10%">
+					<h:outputText value="" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="2 a 11" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:35%">
+					<h:outputText value="80 a 1.200" />
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+		<p:panelGrid style="margin:auto; text-align: center; width:100%;">
+			<p:row>
+				<p:column colspan="3">
+					<h:outputText value="SÉRIE PLAQUETÁRIA" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column styleClass="semBorda" style="width:30%">
+					<h:outputText value="RESULTADO" />
+				</p:column>
+				<p:column colspan="2" styleClass="semBorda" style="width:70%">
+					<h:outputText value="VALORES DE REFERÊNCIA" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column styleClass="semBorda" style="width:30%">
+					<h:outputText value="PLAQUETAS:" />
+					<h:outputText value="#{controllerGeral.hemograma.plaquetas}" />
+					<h:outputText value="/mm³" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:1%">
+					<h:outputText value="" />
+				</p:column>
+				<p:column styleClass="semBorda" style="width:55%">
+					<h:outputText value="150.000 a 400.000/mm³" />
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+		<p:panelGrid style="margin:auto; text-align: center; width:100%;">
+			<p:row>
+				<p:column colspan="4">
+					<h:outputText value="OBS: EXAME AUTOMATIZADO" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column colspan="4">
+					<h:outputText
+						value="RESPONSÁVEL TÉCNICO: LIGIA MARIA GIONGO FEDELI CRF:10491" />
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+	</p:dialog>
+
+	<p:dialog id="urinaDialog" header="Exame de Urina" widgetVar="urina"
+		modal="true" height="800">
+		<h:outputText value="This is a Modal Dialog." />
+	</p:dialog>
+
+</ui:composition>
+</html>

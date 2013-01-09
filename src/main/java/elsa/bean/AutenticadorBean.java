@@ -27,6 +27,7 @@ public class AutenticadorBean {
 			e.printStackTrace();
 		}
 		System.out.println("Boolean " + t);*/
+		
 		boolean t = false;
 		t = this.usuario.equals(this.senha);
 			
@@ -55,7 +56,6 @@ public class AutenticadorBean {
 		return "login?faces-redirect=true";
 	}
 
-	// GETTERS E SETTERS
 
 	public String getUsuario() {
 		return usuario;

@@ -5,63 +5,7 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-
-<style>
-.ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {
-    background: url("#{resource['images/ui-bg_flat_15_cd0a0a_40x100.png']}") repeat-x scroll 50% 50% #CD0A0A;
-    border: 1px solid #CD0A0A;
-    color: #FFFFFF;
-}
-
-.ui-widget-shadow { margin: -7px 0 0 -7px; padding: 7px; background: #000000 url("#{resource['images/ui-bg_highlight-hard_70_000000_1x100.png']}") 50% top repeat-x; opacity: .30;filter:Alpha(Opacity=30); -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }
-
-
-body {
-	color: #333333;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 85%;
-}
-
-html,body {
-	margin: 0;
-	padding: 0;
-}
-
-#container {
-	margin: 0 auto;
-	width: 1024px;
-}
-
-#header {
-	background-image:
-		url("/elsa/javax.faces.resource/logo_elsa.jpg.xhtml?ln=images");
-	background-repeat: no-repeat;
-	margin: 10px 0 4px;
-}
-
-#header h1 {
-	height: 50px;
-	padding-top: 20px;
-	text-align: right;
-}
-
-#loginForm fieldset {
-	text-align: center;
-}
-
-#loginForm table {
-	margin: 20px auto;
-	text-align: center;
-}
-
-#footer {
-	clear: both;
-	margin: 10px 0;
-	padding-top: 10px;
-	text-align: center;
-	width: 100%;
-}
-</style>
+	<h:outputStylesheet library="css" name="main.css" />
 </h:head>
 <h:body>
 
@@ -69,7 +13,10 @@ html,body {
 
 		<div id="header">
 			<h1>
-				<a href="">Projeto ELSA</a>	
+				<h:outputLink
+					value="#{facesContext.externalContext.requestContextPath}">
+					<h:outputText value="Projeto ELSA" />
+				</h:outputLink>
 			</h1>
 		</div>
 
