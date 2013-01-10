@@ -1,6 +1,7 @@
 package elsa.bean;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.HashMap;
 
 import javax.faces.bean.ManagedBean;
@@ -25,14 +26,14 @@ import elsa.remotes.ParticipantUrineExamResult;
 public class ControllerGeral {
 
 	public ControllerGeral(){					
-		System.out.println("Entrando no Construtor do ControllerGeral");		
+		System.out.println("Entrando no Construtor do ControllerGeral ->");		
 		hemograma = new ParticipantHemogramExamResult();
 		hemograma.setImagePath("logo_elsa.jpg");
-		hemograma.setName("João da Silva");
+		hemograma.setName("Joao da Silva");
 		hemograma.setFieldCenter("2012");
 		hemograma.setRecruitmentNumber(12345);
 		hemograma.setBirthdate(123456780L);
-		hemograma.setFirstBsfbBeginDate(923456780L);
+		hemograma.setFirstBsfbBeginDate(1299567800000L);
 		hemograma.setEritrocitos("4.250.000");
 		hemograma.setHemoglobina("14,3");
 		hemograma.setHematocrito("39");

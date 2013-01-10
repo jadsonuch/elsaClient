@@ -1,15 +1,28 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:o="http://omnifaces.org/ui">
 
 <h:head>
 	<h:outputStylesheet library="css" name="main.css" />
+	<style>
+	
+	label.error {
+	    color: #c66;
+	}
+	
+	input.error, select.error, textarea.error {
+	    background-color: #fee;
+	}	
+	</style>
+	
 </h:head>
 <h:body>
 	
-	<p:growl id="growl" showDetail="true" sticky="true" /> 
+	<p:growl id="growl" sticky="true" /> 
 	
 	<div id="container">
 
@@ -41,7 +54,7 @@
 
 							<f:facet name="footer">
 								<p:commandButton id="loginButton" value="Entrar no Sistema"
-									action="#{autenticadorBean.autentica}" />
+									action="#{autenticadorBean.autentica}" update=":growl" />
 							</f:facet>
 						</h:panelGrid>
 					</h:panelGrid>
@@ -50,10 +63,15 @@
 		</div>
 		<div id="footer">
 			<p>
-				Sistema de consultas de exames.<br /> Desenvolvido para TCC da
-				Pós-graduação do Centro Universitário Ritter dos Reis
+				<h:form>
+					<p:commandLink value="Sobre"
+					 onclick="about.show();" />
+				 </h:form>
 			</p>
 		</div>
 	</div>
+	
+	<ui:include src="about.xhtml" />
+	<o:highlight />
 </h:body>
 </html>
