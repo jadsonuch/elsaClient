@@ -1,6 +1,7 @@
 package elsa.bean;
 
 import java.io.IOException;
+import java.rmi.RemoteException;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -9,6 +10,8 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
+
+import br.org.elsa.ehr.webservices.imp.ParticipantExamRemoteProxy;
 
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRException;
@@ -27,6 +30,20 @@ public class ControllerGeral {
 
 	public ControllerGeral(){					
 		System.out.println("Entrando no Construtor do ControllerGeral ->");		
+		
+		ParticipantExamRemoteProxy p = new ParticipantExamRemoteProxy();
+		
+		try {
+			br.org.elsa.ehr.webservices.imp.ParticipantBloodExamResult s = p.fetchParticipantBloodExamResult(5002453);
+			System.out.println("name"+s.getName());
+			System.out.println("birthdate"+s.getBirthdate());
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
 		hemograma = new ParticipantHemogramExamResult();
 		hemograma.setImagePath("logo_elsa.jpg");
 		hemograma.setName("Joao da Silva");
