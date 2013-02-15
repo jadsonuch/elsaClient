@@ -8,6 +8,10 @@
 package br.org.elsa.ehr.webservices.imp;
 
 public class ParticipantBloodExamResult  implements java.io.Serializable {
+    private java.lang.String acidoUricoObs;
+
+    private java.lang.String acidoUricoResult;
+
     private java.lang.String alaninaTransaminaseObs;
 
     private java.lang.String alaninaTransaminaseResult;
@@ -70,6 +74,8 @@ public class ParticipantBloodExamResult  implements java.io.Serializable {
 
     private java.lang.Integer recruitmentNumber;
 
+    private java.lang.String sex;
+
     private java.lang.String trigliceridesObs;
 
     private java.lang.String trigliceridesResult;
@@ -82,6 +88,8 @@ public class ParticipantBloodExamResult  implements java.io.Serializable {
     }
 
     public ParticipantBloodExamResult(
+           java.lang.String acidoUricoObs,
+           java.lang.String acidoUricoResult,
            java.lang.String alaninaTransaminaseObs,
            java.lang.String alaninaTransaminaseResult,
            java.lang.String aspartatoTransaminaseObs,
@@ -113,10 +121,13 @@ public class ParticipantBloodExamResult  implements java.io.Serializable {
            java.lang.String insulinaResult,
            java.lang.String name,
            java.lang.Integer recruitmentNumber,
+           java.lang.String sex,
            java.lang.String trigliceridesObs,
            java.lang.String trigliceridesResult,
            java.lang.String ureiaObs,
            java.lang.String ureiaResult) {
+           this.acidoUricoObs = acidoUricoObs;
+           this.acidoUricoResult = acidoUricoResult;
            this.alaninaTransaminaseObs = alaninaTransaminaseObs;
            this.alaninaTransaminaseResult = alaninaTransaminaseResult;
            this.aspartatoTransaminaseObs = aspartatoTransaminaseObs;
@@ -148,10 +159,51 @@ public class ParticipantBloodExamResult  implements java.io.Serializable {
            this.insulinaResult = insulinaResult;
            this.name = name;
            this.recruitmentNumber = recruitmentNumber;
+           this.sex = sex;
            this.trigliceridesObs = trigliceridesObs;
            this.trigliceridesResult = trigliceridesResult;
            this.ureiaObs = ureiaObs;
            this.ureiaResult = ureiaResult;
+    }
+
+
+    /**
+     * Gets the acidoUricoObs value for this ParticipantBloodExamResult.
+     * 
+     * @return acidoUricoObs
+     */
+    public java.lang.String getAcidoUricoObs() {
+        return acidoUricoObs;
+    }
+
+
+    /**
+     * Sets the acidoUricoObs value for this ParticipantBloodExamResult.
+     * 
+     * @param acidoUricoObs
+     */
+    public void setAcidoUricoObs(java.lang.String acidoUricoObs) {
+        this.acidoUricoObs = acidoUricoObs;
+    }
+
+
+    /**
+     * Gets the acidoUricoResult value for this ParticipantBloodExamResult.
+     * 
+     * @return acidoUricoResult
+     */
+    public java.lang.String getAcidoUricoResult() {
+        return acidoUricoResult;
+    }
+
+
+    /**
+     * Sets the acidoUricoResult value for this ParticipantBloodExamResult.
+     * 
+     * @param acidoUricoResult
+     */
+    public void setAcidoUricoResult(java.lang.String acidoUricoResult) {
+        this.acidoUricoResult = acidoUricoResult;
     }
 
 
@@ -776,6 +828,26 @@ public class ParticipantBloodExamResult  implements java.io.Serializable {
 
 
     /**
+     * Gets the sex value for this ParticipantBloodExamResult.
+     * 
+     * @return sex
+     */
+    public java.lang.String getSex() {
+        return sex;
+    }
+
+
+    /**
+     * Sets the sex value for this ParticipantBloodExamResult.
+     * 
+     * @param sex
+     */
+    public void setSex(java.lang.String sex) {
+        this.sex = sex;
+    }
+
+
+    /**
      * Gets the trigliceridesObs value for this ParticipantBloodExamResult.
      * 
      * @return trigliceridesObs
@@ -866,6 +938,12 @@ public class ParticipantBloodExamResult  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
+            ((this.acidoUricoObs==null && other.getAcidoUricoObs()==null) || 
+             (this.acidoUricoObs!=null &&
+              this.acidoUricoObs.equals(other.getAcidoUricoObs()))) &&
+            ((this.acidoUricoResult==null && other.getAcidoUricoResult()==null) || 
+             (this.acidoUricoResult!=null &&
+              this.acidoUricoResult.equals(other.getAcidoUricoResult()))) &&
             ((this.alaninaTransaminaseObs==null && other.getAlaninaTransaminaseObs()==null) || 
              (this.alaninaTransaminaseObs!=null &&
               this.alaninaTransaminaseObs.equals(other.getAlaninaTransaminaseObs()))) &&
@@ -959,6 +1037,9 @@ public class ParticipantBloodExamResult  implements java.io.Serializable {
             ((this.recruitmentNumber==null && other.getRecruitmentNumber()==null) || 
              (this.recruitmentNumber!=null &&
               this.recruitmentNumber.equals(other.getRecruitmentNumber()))) &&
+            ((this.sex==null && other.getSex()==null) || 
+             (this.sex!=null &&
+              this.sex.equals(other.getSex()))) &&
             ((this.trigliceridesObs==null && other.getTrigliceridesObs()==null) || 
              (this.trigliceridesObs!=null &&
               this.trigliceridesObs.equals(other.getTrigliceridesObs()))) &&
@@ -982,6 +1063,12 @@ public class ParticipantBloodExamResult  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
+        if (getAcidoUricoObs() != null) {
+            _hashCode += getAcidoUricoObs().hashCode();
+        }
+        if (getAcidoUricoResult() != null) {
+            _hashCode += getAcidoUricoResult().hashCode();
+        }
         if (getAlaninaTransaminaseObs() != null) {
             _hashCode += getAlaninaTransaminaseObs().hashCode();
         }
@@ -1075,6 +1162,9 @@ public class ParticipantBloodExamResult  implements java.io.Serializable {
         if (getRecruitmentNumber() != null) {
             _hashCode += getRecruitmentNumber().hashCode();
         }
+        if (getSex() != null) {
+            _hashCode += getSex().hashCode();
+        }
         if (getTrigliceridesObs() != null) {
             _hashCode += getTrigliceridesObs().hashCode();
         }
@@ -1098,6 +1188,20 @@ public class ParticipantBloodExamResult  implements java.io.Serializable {
     static {
         typeDesc.setXmlType(new javax.xml.namespace.QName("http://imp.webservices.ehr.elsa.org.br/", "participantBloodExamResult"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("acidoUricoObs");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "acidoUricoObs"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("acidoUricoResult");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "acidoUricoResult"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("alaninaTransaminaseObs");
         elemField.setXmlName(new javax.xml.namespace.QName("", "alaninaTransaminaseObs"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
@@ -1311,6 +1415,13 @@ public class ParticipantBloodExamResult  implements java.io.Serializable {
         elemField.setFieldName("recruitmentNumber");
         elemField.setXmlName(new javax.xml.namespace.QName("", "recruitmentNumber"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sex");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "sex"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

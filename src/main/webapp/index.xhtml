@@ -11,18 +11,24 @@
 <h:body>
 	<div id="container">
 		<div id="header">
-			<h1>
-				<h:outputLink
+				<!-- 
+				<h1>
+					<h:outputLink
 					value="#{facesContext.externalContext.requestContextPath}">
 					<h:outputText value="Projeto ELSA" />
-				</h:outputLink>
-			</h1>
-			<h:form>
-				<h5>
+					</h:outputLink>
+				</h1>
+				 -->
+			<h5>
+				<h:form>
 					Bem Vindo, #{sessionScope.usuario}.
 					<h:commandLink action="#{autenticadorBean.registraSaida}"
 						value="Sair" />
-				</h5>
+				</h:form>
+			</h5>
+
+			<h:form>
+
 			</h:form>
 		</div>
 
@@ -52,31 +58,30 @@
 						</thead>
 						<tbody class="ui-datatable-data ui-widget-content"
 							id="dataTable_data">
-							<h:panelGroup rendered="#{controllerGeral.sangue!=null}">
+							<h:panelGroup rendered="#{controllerGeral.blood!=null}">
 								<tr class="ui-widget-content">
 									<td><div class="ui-dt-c">Sangue</div></td>
-									<td><div class="ui-dt-c">
-										<h:outputText value="">
-										<f:convertDateTime pattern="dd/MM/yyyy" />
+										<td><div class="ui-dt-c">
+										<h:outputText value="#{controllerGeral.blood.firstBsfbBeginDate}">
+											<f:convertDateTime pattern="dd/MM/yyyy" />
 										</h:outputText>
-									</div></td>
+									</div></td>			
 									<td><div class="ui-dt-c">
 											<p:commandButton value="Abrir" onclick="sangue.show();"
 												type="button" />
 										</div></td>
-									<td><div class="ui-dt-c">
-											<p:commandButton value="Salvar PDF"
-												actionListener="#{controllerGeral.salvarPDFSangue}" />
+											<td><div class="ui-dt-c">
+											<h:commandLink value="Salvar PDF"
+												actionListener="#{controllerGeral.salvarPDFSangue}" 
+												/>
 										</div></td>
-
-
 								</tr>
 							</h:panelGroup>
-							<h:panelGroup rendered="#{controllerGeral.hemograma!=null}">
+							<h:panelGroup rendered="#{controllerGeral.hemogram!=null}">
 								<tr class="ui-widget-content">
 									<td><div class="ui-dt-c">Hemograma</div></td>
 									<td><div class="ui-dt-c">
-										<h:outputText value="#{controllerGeral.hemograma.firstBsfbBeginDate}">
+										<h:outputText value="#{controllerGeral.hemogram.firstBsfbBeginDate}">
 											<f:convertDateTime pattern="dd/MM/yyyy" />
 										</h:outputText>
 									</div></td>									
@@ -91,21 +96,22 @@
 										</div></td>
 								</tr>
 							</h:panelGroup>
-							<h:panelGroup rendered="#{controllerGeral.urina!=null}">
+							<h:panelGroup rendered="#{controllerGeral.urine!=null}">
 								<tr class="ui-widget-content">
 									<td><div class="ui-dt-c">Urina</div></td>
 									<td><div class="ui-dt-c">
-										<h:outputText value="">
-										<f:convertDateTime pattern="dd/MM/yyyy" />
+										<h:outputText value="#{controllerGeral.urine.firstUrineAliquotingBeginDate}">
+											<f:convertDateTime pattern="dd/MM/yyyy" />
 										</h:outputText>
-									</div></td>									
+									</div></td>								
 									<td><div class="ui-dt-c">
 											<p:commandButton value="Abrir" onclick="urina.show();"
 												type="button" />
 										</div></td>
-									<td><div class="ui-dt-c">
+										<td><div class="ui-dt-c">
 											<h:commandLink value="Salvar PDF"
-												actionListener="#{controllerGeral.salvarPDFUrina}" />
+												actionListener="#{controllerGeral.salvarPDFUrina}" 
+												/>
 										</div></td>
 								</tr>
 							</h:panelGroup>

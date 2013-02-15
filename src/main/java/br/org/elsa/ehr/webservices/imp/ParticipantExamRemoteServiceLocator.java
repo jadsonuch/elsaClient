@@ -55,7 +55,7 @@ public class ParticipantExamRemoteServiceLocator extends org.apache.axis.client.
             br.org.elsa.ehr.webservices.imp.ParticipantExamRemoteServiceSoapBindingStub _stub = new br.org.elsa.ehr.webservices.imp.ParticipantExamRemoteServiceSoapBindingStub(portAddress, this);
             _stub.setPortName(getParticipantExamRemotePortWSDDServiceName());
             _stub.setUsername("jadson");
-            _stub.setPassword("!12@service@21!");
+            _stub.setPassword("!12@service@21!");            
             return _stub;
         }
         catch (org.apache.axis.AxisFault e) {

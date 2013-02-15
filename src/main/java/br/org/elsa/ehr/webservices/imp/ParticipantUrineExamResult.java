@@ -44,6 +44,8 @@ public class ParticipantUrineExamResult  implements java.io.Serializable {
 
     private java.lang.Integer recruitmentNumber;
 
+    private java.lang.String sex;
+
     private java.lang.String sodioObs;
 
     private java.lang.String sodioResult;
@@ -72,6 +74,7 @@ public class ParticipantUrineExamResult  implements java.io.Serializable {
            java.lang.String potassioResult,
            java.lang.String potassioVolume,
            java.lang.Integer recruitmentNumber,
+           java.lang.String sex,
            java.lang.String sodioObs,
            java.lang.String sodioResult,
            java.lang.String sodioVolume) {
@@ -93,6 +96,7 @@ public class ParticipantUrineExamResult  implements java.io.Serializable {
            this.potassioResult = potassioResult;
            this.potassioVolume = potassioVolume;
            this.recruitmentNumber = recruitmentNumber;
+           this.sex = sex;
            this.sodioObs = sodioObs;
            this.sodioResult = sodioResult;
            this.sodioVolume = sodioVolume;
@@ -460,6 +464,26 @@ public class ParticipantUrineExamResult  implements java.io.Serializable {
 
 
     /**
+     * Gets the sex value for this ParticipantUrineExamResult.
+     * 
+     * @return sex
+     */
+    public java.lang.String getSex() {
+        return sex;
+    }
+
+
+    /**
+     * Sets the sex value for this ParticipantUrineExamResult.
+     * 
+     * @param sex
+     */
+    public void setSex(java.lang.String sex) {
+        this.sex = sex;
+    }
+
+
+    /**
      * Gets the sodioObs value for this ParticipantUrineExamResult.
      * 
      * @return sodioObs
@@ -584,6 +608,9 @@ public class ParticipantUrineExamResult  implements java.io.Serializable {
             ((this.recruitmentNumber==null && other.getRecruitmentNumber()==null) || 
              (this.recruitmentNumber!=null &&
               this.recruitmentNumber.equals(other.getRecruitmentNumber()))) &&
+            ((this.sex==null && other.getSex()==null) || 
+             (this.sex!=null &&
+              this.sex.equals(other.getSex()))) &&
             ((this.sodioObs==null && other.getSodioObs()==null) || 
              (this.sodioObs!=null &&
               this.sodioObs.equals(other.getSodioObs()))) &&
@@ -657,6 +684,9 @@ public class ParticipantUrineExamResult  implements java.io.Serializable {
         }
         if (getRecruitmentNumber() != null) {
             _hashCode += getRecruitmentNumber().hashCode();
+        }
+        if (getSex() != null) {
+            _hashCode += getSex().hashCode();
         }
         if (getSodioObs() != null) {
             _hashCode += getSodioObs().hashCode();
@@ -800,6 +830,13 @@ public class ParticipantUrineExamResult  implements java.io.Serializable {
         elemField.setFieldName("recruitmentNumber");
         elemField.setXmlName(new javax.xml.namespace.QName("", "recruitmentNumber"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sex");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "sex"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

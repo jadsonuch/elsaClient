@@ -36,6 +36,13 @@ html,body {
 	text-align: right;
 }
 
+#header h5 {
+	height: 50px;
+	padding-top: 20px;
+	text-align: right;
+}
+
+
 #header h1 a {
     color: #0092DD;
     text-decoration: none;

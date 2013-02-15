@@ -10,5 +10,6 @@ package br.org.elsa.ehr.webservices.imp;
 public interface ParticipantExamRemote extends java.rmi.Remote {
     public br.org.elsa.ehr.webservices.imp.ParticipantHemogramExamResult fetchParticipantHemogramExamResult(java.lang.Integer arg0) throws java.rmi.RemoteException;
     public br.org.elsa.ehr.webservices.imp.ParticipantUrineExamResult fetchParticipantUrineExamResult(java.lang.Integer arg0) throws java.rmi.RemoteException;
+    public java.lang.String fetchPartipantSex(java.lang.Integer arg0) throws java.rmi.RemoteException;
     public br.org.elsa.ehr.webservices.imp.ParticipantBloodExamResult fetchParticipantBloodExamResult(java.lang.Integer arg0) throws java.rmi.RemoteException;
 }

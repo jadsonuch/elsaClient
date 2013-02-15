@@ -56,6 +56,12 @@ public class ParticipantExamRemoteProxy implements br.org.elsa.ehr.webservices.i
     return participantExamRemote.fetchParticipantUrineExamResult(arg0);
   }
   
+  public java.lang.String fetchPartipantSex(java.lang.Integer arg0) throws java.rmi.RemoteException{
+    if (participantExamRemote == null)
+      _initParticipantExamRemoteProxy();
+    return participantExamRemote.fetchPartipantSex(arg0);
+  }
+  
   public br.org.elsa.ehr.webservices.imp.ParticipantBloodExamResult fetchParticipantBloodExamResult(java.lang.Integer arg0) throws java.rmi.RemoteException{
     if (participantExamRemote == null)
       _initParticipantExamRemoteProxy();
